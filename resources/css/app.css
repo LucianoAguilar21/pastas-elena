@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body{
+    overflow-y: scroll;
+    top: 0;
+    right: 0; 
+    bottom: 0; 
+    left: 0; 
+    
+}
