@@ -82,7 +82,7 @@
            
         </div>
 
-        {{-- @can('update',$order)
+        @can('update',$order)
         <x-dropdown>
             <x-slot name="trigger">
                 <button class="text-blue-300 font-bold"><i class="fa-solid fa-ellipsis"></i></button>
@@ -99,7 +99,7 @@
                 </form>
             </x-slot>
         </x-dropdown>                
-        @endcan --}}
+        @endcan
     </div>
     
     

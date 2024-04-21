@@ -271,5 +271,7 @@
     "With delivery":"Con envío",
     "Without delivery":"Sin envío",
     "Delivery paid":"Envío pagado",
-    "¿Delivery paid?":"¿Envío pagado?"
+    "¿Delivery paid?":"¿Envío pagado?",
+    "Edit order":"Editar pedido",
+    "Delete order":"Eliminar pedido"
 }
