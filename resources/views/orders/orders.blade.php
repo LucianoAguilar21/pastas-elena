@@ -4,10 +4,7 @@
     </div>
     @foreach ($orders as $order)
 
-    <div class="py-6  space-x-2">
-        
-        {{-- <i class="fa-solid fa-clipboard-list h-6 w-6 text-gray-600 dark:text-gray-400 -scale-x-100"></i> --}}
-        {{-- <span class="rounded-full bg-indigo-500 uppercase px-2 py-1 text-xs font-bold mr-3">{{$order->status}}</span> --}}
+    <div class="py-6 flex space-x-2">
         <div class="flex-1">
             <div class="flex justify-between items-center">
                 <div>
@@ -50,7 +47,7 @@
                     <span class="text-lg  text-gray-600 dark:text-gray-200 font-bold">
                         {{$order->customer}}
                     </span>
-                    <hr>
+                    <hr >
                     
                     @if ($order->delivery)
                         <small class="text-sm text-gray-600 dark:text-gray-400 font-bold">
@@ -71,27 +68,26 @@
                         <small class="text-sm text-gray-600 dark:text-gray-400"> &middot; {{ __('edited') }}</small>
                         <br>
                     @endunless
-                    
-                    
 
                 </div>
             </div>
             <p class="mt-4 text-lg text-gray-900 dark:text-gray-100 font-bold">{{ $order->description }}</p>                        
 
-            
-           
         </div>
-
-        @can('update',$order)
+        
+        {{-- @can('update',$order) --}}
         <x-dropdown>
             <x-slot name="trigger">
-                <button class="text-blue-300 font-bold"><i class="fa-solid fa-ellipsis"></i></button>
+                <button class="text-blue-600 font-bold"><i class="fa-solid fa-ellipsis"></i></button>
             </x-slot>
             <x-slot name="content">
-                <x-dropdown-link :href="route('orders.edit',$chirp)">
+                <x-dropdown-link :href="route('orders.show',$order)">
+                    {{__('Details')}}
+                </x-dropdown-link>
+                <x-dropdown-link :href="route('orders.edit',$order)">
                     {{__('Edit order')}}
                 </x-dropdown-link>
-                <form action="{{route('orders.destroy',$chirp)}}" method="POST">
+                <form action="{{route('orders.destroy',$order)}}" method="POST">
                     @csrf @method('DELETE')
                     <x-dropdown-link href="" onclick="event.preventDefault(); this.closest('form').submit();">
                         {{__('Delete order')}}
@@ -99,7 +95,7 @@
                 </form>
             </x-slot>
         </x-dropdown>                
-        @endcan
+        {{-- @endcan --}}
     </div>
     
     

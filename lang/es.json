@@ -273,5 +273,8 @@
     "Delivery paid":"Envío pagado",
     "¿Delivery paid?":"¿Envío pagado?",
     "Edit order":"Editar pedido",
-    "Delete order":"Eliminar pedido"
+    "Delete order":"Eliminar pedido",
+    "Order details":"Detalles del pedido",
+    "Back":"Volver",
+    "Order added by":"Pedido agregado por"
 }

@@ -20,6 +20,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
     Route::post('/orders', [OrderController::class, 'store'])->name('orders.store');
     Route::get('/orders/{order}/edit',[OrderController::class,'edit'])->name('orders.edit');
+    Route::get('/orders/{order}/destroy',[OrderController::class,'destroy'])->name('orders.destroy');
+    Route::get('/orders/{order}/show',[OrderController::class,'show'])->name('orders.show');
 
 });
 
