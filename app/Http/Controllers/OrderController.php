@@ -76,6 +76,7 @@ class OrderController extends Controller
      */
     public function destroy(Order $order)
     {
-        //
+        $order->delete();
+        return to_route('orders.index')->with('status',__('¡Order deleted!').': '.__('Customer').': '.$order->customer);
     }
 }

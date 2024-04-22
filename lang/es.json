@@ -276,5 +276,6 @@
     "Delete order":"Eliminar pedido",
     "Order details":"Detalles del pedido",
     "Back":"Volver",
-    "Order added by":"Pedido agregado por"
+    "Order added by":"Pedido agregado por",
+    "¡Order deleted!":"¡Pedido eliminado!"
 }
