@@ -47,8 +47,13 @@
                     <span class="text-lg  text-gray-600 dark:text-gray-200 font-bold">
                         {{$order->customer}}
                     </span>
+                    
                     <hr >
                     
+                    @unless($order->created_at->eq($order->updated_at))
+                        <small class="text-sm text-gray-600 dark:text-gray-400"> &middot; {{ __('Edited') }}</small>
+                        <br>
+                    @endunless
                     @if ($order->delivery)
                         <small class="text-sm text-gray-600 dark:text-gray-400 font-bold">
                             Direccion: {{ $order->address }}
@@ -69,10 +74,7 @@
                     @endif
                     <hr>
                     
-                    @unless($order->created_at->eq($order->updated_at))
-                        <small class="text-sm text-gray-600 dark:text-gray-400"> &middot; {{ __('edited') }}</small>
-                        <br>
-                    @endunless
+                    
                 </div>
             </div>
             <p class="text-sm text-gray-600 dark:text-gray-400 font-bold">Total: ${{$order->total}}</p>

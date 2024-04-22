@@ -68,7 +68,20 @@ class OrderController extends Controller
      */
     public function update(Request $request, Order $order)
     {
-        //
+        $validated = $request->validate([
+            'description' => ['required','min:3'],
+            'customer' => ['required','min:3'],
+            'paid'=> ['required','boolean'],
+            'delivery'=>['required','boolean'],
+            'address'=> ['nullable','min:4','max:255'],
+            'delivery_price' =>['nullable','numeric','gt:0'],
+            'delivery_date' =>['required','date','date_format:Y-m-d\TH:i','after_or_equal:today'],
+            'total'=>['required','numeric','gt:0']
+        ]); 
+
+        $order->update($validated);
+
+        return to_route('orders.index')->with('status',__('¡Order updated Successfully!'));
     }
 
     /**

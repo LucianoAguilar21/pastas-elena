@@ -277,5 +277,8 @@
     "Order details":"Detalles del pedido",
     "Back":"Volver",
     "Order added by":"Pedido agregado por",
-    "¡Order deleted!":"¡Pedido eliminado!"
+    "¡Order deleted!":"¡Pedido eliminado!",
+    "¡Order updated Successfully!":"Pedido actualizado correctamente",
+    "Edited":"Editado",
+    "Status":"Estado"
 }

@@ -48,11 +48,11 @@
             @if ($errors->get('address') || $errors->get('delivery_price'))
             <div class="flex">
                 <div class="">
-                    <input class="" checked type="radio" name="delivery" id="inlineRadio3" value="true" onclick="enableAddress()">
+                    <input class="" checked type="radio" name="delivery" id="inlineRadio3" value="1" onclick="enableAddress()">
                     <label class="text-gray-700 text-sm font-bold mb-2 dark:text-white" for="inlineRadio3">Si</label>
                 </div>
                 <div class="mx-5">
-                    <input class="" type="radio" name="delivery" id="inlineRadio4" value="false" onclick="disableAddress()">
+                    <input class="" type="radio" name="delivery" id="inlineRadio4" value="0" onclick="disableAddress()">
                     <label class="text-gray-700 text-sm font-bold mb-2 dark:text-white" for="inlineRadio4" >No</label>
                 </div>
             </div>

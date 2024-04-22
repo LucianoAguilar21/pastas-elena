@@ -6,7 +6,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ config('app.name', 'Laravel') }}</title>
-
+        <link rel="shortcut icon" href="https://scontent.fsty1-1.fna.fbcdn.net/v/t1.6435-9/209762159_341557424073447_222755981763541434_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_ohc=eY4q_Hht1pMAb6W3XEW&_nc_ht=scontent.fsty1-1.fna&oh=00_AfCrqaM7PmEf6HCrHDaSV2ETNZcVb8BMEt95kPi5h8SQLw&oe=6648FCE9" type="image/x-icon">
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
