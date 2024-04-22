@@ -60,7 +60,7 @@ class OrderController extends Controller
      */
     public function edit(Order $order)
     {
-        return view('orders.edit');
+        return view('orders.edit',['order'=>$order]);
     }
 
     /**

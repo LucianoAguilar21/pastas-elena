@@ -102,11 +102,11 @@
 
 
             <label class="block text-gray-700 text-sm font-bold mt-2 dark:text-white" for="total">
-                {{__('Total')}}
+                {{__('Total')}} $
             </label>
             <input class="w-full shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     name="total" required min="1" id="total" type="number" 
-                    placeholder="{{__('Total')}}:" value="{{old('total')}}">
+                    placeholder="{{__('Total')}} $:" value="{{old('total')}}">
             <x-input-error :messages="$errors->get('total')"/>
 
             <x-primary-button class="mt-4">{{__('Add')}}</x-primary-button>

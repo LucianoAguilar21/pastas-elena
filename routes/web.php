@@ -22,6 +22,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/orders/{order}/edit',[OrderController::class,'edit'])->name('orders.edit');
     Route::delete('/orders/{order}/destroy',[OrderController::class,'destroy'])->name('orders.destroy');
     Route::get('/orders/{order}/show',[OrderController::class,'show'])->name('orders.show');
+    Route::put('/orders/{order}',[OrderController::class,'update'])->name('orders.update');
 
 });
 

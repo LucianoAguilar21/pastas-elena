@@ -55,22 +55,27 @@
                         </small>
                         <hr>
                         <small class="text-sm text-gray-600 dark:text-gray-400 font-bold">
+                            Precio envío: ${{ $order->delivery_price }}
+                        </small>
+                        <hr>
+                        <small class="text-sm text-gray-600 dark:text-gray-400 font-bold">
                             Entrega: {{ \Carbon\Carbon::parse($order->delivery_date)->isoFormat('dddd D [de] MMMM [a las] H:mm') }}
                         </small>
                     @else
                         <small class="text-sm text-gray-600 dark:text-gray-400 font-bold">
                             Retira: {{ \Carbon\Carbon::parse($order->delivery_date)->isoFormat('dddd D [de] MMMM [a las] H:mm') }}
                         </small>
+                        
                     @endif
+                    <hr>
                     
-                    <br>
                     @unless($order->created_at->eq($order->updated_at))
                         <small class="text-sm text-gray-600 dark:text-gray-400"> &middot; {{ __('edited') }}</small>
                         <br>
                     @endunless
-
                 </div>
             </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400 font-bold">Total: ${{$order->total}}</p>
             <p class="mt-4 text-lg text-gray-900 dark:text-gray-100 font-bold">{{ $order->description }}</p>                        
 
         </div>
@@ -78,19 +83,19 @@
         {{-- @can('update',$order) --}}
         <x-dropdown>
             <x-slot name="trigger">
-                <button class="text-blue-600 font-bold"><i class="fa-solid fa-ellipsis"></i></button>
+                <button class="text-blue-600 font-bold text-xl"><i class="fa-solid fa-ellipsis"></i></button>
             </x-slot>
             <x-slot name="content">
                 <x-dropdown-link :href="route('orders.show',$order)">
-                    {{__('Details')}}
+                    <span class="font-bold">{{__('Details')}}</span>
                 </x-dropdown-link>
                 <x-dropdown-link :href="route('orders.edit',$order)">
-                    {{__('Edit order')}}
+                    <span class="font-bold">{{__('Edit order')}}</span>
                 </x-dropdown-link>
                 <form action="{{route('orders.destroy',$order)}}" method="POST">
                     @csrf @method('DELETE')
                     <x-dropdown-link href="" onclick="event.preventDefault(); this.closest('form').submit();">
-                        {{__('Delete order')}}
+                        <span class="font-bold">{{__('Delete order')}}</span>
                     </x-dropdown-link>
                 </form>
             </x-slot>
