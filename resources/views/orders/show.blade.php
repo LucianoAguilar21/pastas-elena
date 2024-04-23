@@ -51,17 +51,21 @@
                         @endif
                         <br>
 
-                        <form action="#">
+                        <form action="{{route('orders.changeStatus',$order)}}" method="POST">
+                            @csrf @method('PUT')
                             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mt-3" for="grid-state">
-                                {{__('Status')}}:
+                                {{__('Change status')}}:
                             </label>
-                              
-                            <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-1 px-2 pr-3 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
-                                <option>Nuevo</option>
-                                <option>En proceso</option>
-                                <option>Finalizado</option>
-                                <option>Entregadodo</option>
-                            </select>
+                            
+                            <div class="flex">
+                                <select name="status" class="block appearance-none w-36 bg-gray-200 border border-gray-200 text-gray-700 py-1 px-2 pr-3 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+                                    <option value="new" class="hover:bg-red-200">Nuevo</option>
+                                    <option value="in_process">En proceso</option>
+                                    <option value="finished">Finalizado</option>
+                                    <option value="delivered">Entregado</option>
+                                </select>
+                                <button class="mx-2 p-2 rounded bg-gray-200">{{__('Change')}}</button>
+                            </div>
                         </form>
                        
                         <span class="text-lg  text-gray-600 dark:text-gray-200 font-bold m-2">

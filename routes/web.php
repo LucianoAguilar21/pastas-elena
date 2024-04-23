@@ -23,6 +23,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/orders/{order}/destroy',[OrderController::class,'destroy'])->name('orders.destroy');
     Route::get('/orders/{order}/show',[OrderController::class,'show'])->name('orders.show');
     Route::put('/orders/{order}',[OrderController::class,'update'])->name('orders.update');
+    Route::put('/orders/{order}',[OrderController::class,'changeStatus'])->name('orders.changeStatus');
 
 });
 

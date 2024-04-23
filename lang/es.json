@@ -280,5 +280,7 @@
     "¡Order deleted!":"¡Pedido eliminado!",
     "¡Order updated Successfully!":"Pedido actualizado correctamente",
     "Edited":"Editado",
-    "Status":"Estado"
+    "Status":"Estado",
+    "Change":"Cambiar",
+    "Change status":"Cambiar estado"
 }

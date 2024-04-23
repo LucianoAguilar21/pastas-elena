@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class OrderController extends Controller
 {
@@ -91,5 +92,16 @@ class OrderController extends Controller
     {
         $order->delete();
         return to_route('orders.index')->with('status',__('¡Order deleted!').': '.__('Customer').': '.$order->customer);
+    }
+
+    public function changeStatus(Request $request, Order $order)
+    {
+        $validated = $request->validate([
+            'status' => ['required', Rule::in('new','in_process','finished','delivered')]
+        ]);
+
+        $order->update( $validated);
+
+        return to_route('orders.index')->with('status',__('¡Order updated Successfully!'));
     }
 }
