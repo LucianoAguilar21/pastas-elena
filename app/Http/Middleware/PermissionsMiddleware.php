@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class RoleMiddleware
+class PermissionsMiddleware
 {
     /**
      * Handle an incoming request.
@@ -15,7 +15,7 @@ class RoleMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if($request->user()->role != 'admin' || !$request->user()->permissions){
+        if(!$request->user()->permissions){
             return to_route('orders.index');
         }
         return $next($request);

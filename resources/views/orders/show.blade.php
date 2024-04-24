@@ -1,4 +1,5 @@
 <x-app-layout>
+    @can('view',$order)
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             {{ __('Details') }}
@@ -7,6 +8,9 @@
     <div class="py-5 ">
         <div class="max-w-7xl mx-auto   sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                
+                    
+                
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <a href="javascript:history.back()" class="mb-4 text-white bg-cyan-500 rounded p-1"><i class="fa-solid fa-backward text-white m-2"></i>{{__('Back')}}</a>
 
@@ -108,4 +112,5 @@
             </div>
         </div>
     </div>                           
+    @endcan
 </x-app-layout>

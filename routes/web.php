@@ -18,12 +18,6 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
-    Route::post('/orders', [OrderController::class, 'store'])->name('orders.store');
-    Route::get('/orders/{order}/edit',[OrderController::class,'edit'])->name('orders.edit');
-    Route::delete('/orders/{order}/destroy',[OrderController::class,'destroy'])->name('orders.destroy');
-    Route::get('/orders/{order}/show',[OrderController::class,'show'])->name('orders.show');
-    Route::put('/orders/{order}',[OrderController::class,'update'])->name('orders.update');
-    Route::put('/orders/{order}/changeStatus',[OrderController::class,'changeStatus'])->name('orders.changeStatus');
 
 });
 
@@ -31,4 +25,13 @@ require __DIR__.'/auth.php';
 
 Route::middleware('auth','role:admin')->group(function () {
     Route::get('/dashboard',[AdminController::class ,'index'])->name('dashboard');
+});
+
+Route::middleware('auth','permissions')->group(function () {
+    Route::post('/orders', [OrderController::class, 'store'])->name('orders.store');
+    Route::get('/orders/{order}/edit',[OrderController::class,'edit'])->name('orders.edit');
+    Route::delete('/orders/{order}/destroy',[OrderController::class,'destroy'])->name('orders.destroy');
+    Route::get('/orders/{order}/show',[OrderController::class,'show'])->name('orders.show');
+    Route::put('/orders/{order}',[OrderController::class,'update'])->name('orders.update');
+    Route::put('/orders/{order}/changeStatus',[OrderController::class,'changeStatus'])->name('orders.changeStatus');
 });

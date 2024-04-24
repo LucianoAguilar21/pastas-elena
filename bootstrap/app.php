@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\PermissionsMiddleware;
 use App\Http\Middleware\RoleMiddleware;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -13,8 +14,20 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->alias([
-            'role' => RoleMiddleware::class
-        ])->statefulApi();    })
+            'role' => RoleMiddleware::class,
+           
+        ])->statefulApi();
+        // $middleware->alias([
+        //     'permissions' => PermissionsMiddleware::class
+        //     ])->statefulApi(); 
+        })
+    ->withMiddleware(function (Middleware $middleware) {
+        
+        $middleware->alias([
+            'permissions' => PermissionsMiddleware::class
+            ])->statefulApi(); 
+        })
+    
     ->withExceptions(function (Exceptions $exceptions) {
         //
     })->create();

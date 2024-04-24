@@ -1,3 +1,4 @@
+@can('viewAny',App\Models\Order::class)
 <div class="mt-6 bg-white dark:bg-gray-800 shadow-sm rounded-lg divide-y dark:divide-gray-900">
     <div>
         {{$orders->links()}}
@@ -7,6 +8,9 @@
     <div class="py-6 flex space-x-2">
         <div class="flex-1">
             <div class="flex justify-between items-center">
+             
+                    
+                
                 <div>
 
                     @switch($order->status)
@@ -76,13 +80,15 @@
                     
                     
                 </div>
+               
             </div>
             <p class="text-sm text-gray-600 dark:text-gray-400 font-bold">Total: ${{$order->total}}</p>
             <p class="mt-4 text-lg text-gray-900 dark:text-gray-100 font-bold">{{ $order->description }}</p>                        
 
         </div>
         
-        {{-- @can('update',$order) --}}
+        @can('update',$order)
+       
         <x-dropdown>
             <x-slot name="trigger">
                 <button class="text-blue-600 font-bold text-xl"><i class="fa-solid fa-ellipsis"></i></button>
@@ -101,8 +107,9 @@
                     </x-dropdown-link>
                 </form>
             </x-slot>
-        </x-dropdown>                
-        {{-- @endcan --}}
+        </x-dropdown>
+                   
+        @endcan
     </div>
     
     
@@ -110,3 +117,4 @@
 
    
 </div>
+@endcan
