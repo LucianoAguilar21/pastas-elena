@@ -13,6 +13,7 @@ class OrderController extends Controller
      */
     public function index()
     {
+        $this->authorize('viewAny');
         return view('orders.index',['orders'=>Order::with('user')->orderByDesc('created_at')->paginate(10)]);
     }
 
@@ -53,6 +54,7 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
+        $this->authorize('show',$order);
         return view('orders.show',['order'=>$order]);
     }
 
@@ -61,6 +63,7 @@ class OrderController extends Controller
      */
     public function edit(Order $order)
     {
+        $this->authorize('update',$order);
         return view('orders.edit',['order'=>$order]);
     }
 
