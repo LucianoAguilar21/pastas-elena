@@ -16,11 +16,13 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    @if (auth()->user()->role == 'admin')
+                    {{-- @if (auth()->user()->role == 'admin' || auth()->user()->role == 'super-admin' ) --}}
+                    @can('viewAny',App\Models\User::class)  
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    @endif
+                    @endcan
+                    {{-- @endif --}}
                     <x-nav-link :href="route('orders.index')" :active="request()->routeIs('orders.*')">
                         {{ __('Orders') }}
                     </x-nav-link>
@@ -77,10 +79,12 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             
-            {{-- @if(auth()->user()->role === 'admin') --}}
+            {{-- @if(auth()->user()->role === 'admin' || auth()->user()->role === 'super-admin' ) --}}
+            @can('viewAny',App\Models\User::class)          
                 <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                     {{ __('Dashboard') }}
                 </x-responsive-nav-link>
+            @endcan
             {{-- @endif --}}
 
             <x-responsive-nav-link :href="route('orders.index')" :active="request()->routeIs('orders.*')">

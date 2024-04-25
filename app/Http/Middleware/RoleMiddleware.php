@@ -15,7 +15,7 @@ class RoleMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if($request->user()->role != 'admin' || !$request->user()->permissions){
+        if(($request->user()->role != 'admin' && $request->user()->role != 'super-admin' ) || !$request->user()->permissions ){
             return to_route('orders.index');
         }
         return $next($request);

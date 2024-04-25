@@ -1,5 +1,5 @@
 <x-app-layout>
-    @if (auth()->user()->role ==='admin')
+    {{-- @can ('viewAny', App\Models\User::class) --}}
         
     
     <x-slot name="header">
@@ -45,5 +45,5 @@
             </div>
         </div>
     </div>
-    @endif
+    {{-- @endcan --}}
 </x-app-layout>

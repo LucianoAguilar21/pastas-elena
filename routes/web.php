@@ -23,11 +23,13 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::middleware('auth','role:admin')->group(function () {
+Route::middleware('auth','role')->group(function () {
     Route::get('/dashboard',[AdminController::class ,'index'])->name('dashboard');
     Route::get('/dashboard/user/{user}',[AdminController::class ,'show'])->name('admin.user.show');
     Route::put('/dashboard/{user}/grantPermissions',[AdminController::class ,'update'])->name('admin.user.update');
-    Route::put('/dashboard/{user}/removePermissions',[AdminController::class ,'remove'])->name('admin.user.remove');
+    Route::put('/dashboard/{user}/removePermissions',[AdminController::class ,'removePermissions'])->name('admin.user.remove');
+    Route::put('/dashboard/{user}/toAdmin',[AdminController::class ,'toAdmin'])->name('admin.user.toAdmin');
+    Route::delete('/dashboard/{user}/destroy',[AdminController::class ,'destroy'])->name('admin.user.destroy');
 });
 
 Route::middleware('auth','permissions')->group(function () {

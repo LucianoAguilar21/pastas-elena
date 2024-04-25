@@ -56,21 +56,33 @@ class AdminController extends Controller
     {
         $user->permissions = true;
         $user->save();
-        return to_route('dashboard');
+        return to_route('dashboard')->with('status',__('Permissions added successfully'));
+    }
+
+    public function toAdmin(User $user)
+    {
+        $user->role == 'user' ?  $user->role ='admin':  $user->role ='user';
+        $user->save();
+        return to_route('dashboard')->with('status',__('Role changed successfully'));
     }
 
     public function remove(Request $request, User $user)
     {
+     
+    }
+    public function removePermissions(Request $request, User $user)
+    {
         $user->permissions = false;
         $user->save();
-        return to_route('dashboard');
+        return to_route('dashboard')->with('status',__('Permissions removed successfully'));
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(User $user)
     {
-        //
+        $user->delete();
+        return to_route('dashboard')->with('status',__('User deleted successfully'));
     }
 }
