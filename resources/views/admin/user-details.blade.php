@@ -34,8 +34,6 @@
 
                 {{-- @can('update',$user) --}}
                 @if ($user->role !== 'super-admin' && !auth()->user()->is($user))
-                    
-                
                     @if ($user->permissions == false)
                     <form class="" action="{{ route('admin.user.update',  $user) }}" method="POST">
                         @csrf @method('PUT')
