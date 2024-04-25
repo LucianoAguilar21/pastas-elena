@@ -282,5 +282,9 @@
     "Edited":"Editado",
     "Status":"Estado",
     "Change":"Cambiar",
-    "Change status":"Cambiar estado"
+    "Change status":"Cambiar estado",
+    "Permissions":"Permisos",
+    "Role":"Rol",
+    "Grant permissions":"Otorgar permisos",
+    "Remove permissions":"Remover permisos"
 }

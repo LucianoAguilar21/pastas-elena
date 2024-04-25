@@ -2,19 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('dashboard',[
-            'users'=>User::all()
-        ]);
+        //
     }
 
     /**
@@ -36,15 +34,15 @@ class AdminController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(User $user)
+    public function show(Comment $comment)
     {
-        return view('admin.user-details',['user'=>$user]);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(User $user)
+    public function edit(Comment $comment)
     {
         //
     }
@@ -52,24 +50,15 @@ class AdminController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, Comment $comment)
     {
-        $user->permissions = true;
-        $user->save();
-        return to_route('dashboard');
-    }
-
-    public function remove(Request $request, User $user)
-    {
-        $user->permissions = false;
-        $user->save();
-        return to_route('dashboard');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Comment $comment)
     {
         //
     }
