@@ -15,7 +15,7 @@
                     <p class="text-gray-700 p-1"> <span class="font-bold">{{__('Email')}} </span>: {{$user->email}} </p>
                     <div class="flex">
                         <p class="text-gray-700 p-1"> <span class="font-bold">{{__('Role')}} </span> : {{$user->role}} </p>
-                        
+
                         @if( auth()->user()->role =='super-admin' && $user->role !== 'super-admin' && !auth()->user()->is($user))
                                                  
                             <form action="{{ route('admin.user.toAdmin',  $user) }}" method="POST">
@@ -39,13 +39,13 @@
                     @if ($user->permissions == false)
                     <form class="" action="{{ route('admin.user.update',  $user) }}" method="POST">
                         @csrf @method('PUT')
-                        <button class="rounded bg-blue-400 m-3 p-1" type="submit">{{__('Grant permissions')}}</button>
+                        <button class="rounded bg-green-500 m-3 p-1  text-white font-bold" type="submit">{{__('Grant permissions')}}</button>
                     </form>    
                     @endif
                         @if ( $user->permissions == true)
                         <form class="" action="{{ route('admin.user.remove',  $user) }}" method="POST">
                             @csrf @method('PUT')
-                            <button class="rounded bg-red-400 m-3 p-1" type="submit">{{__('Remove permissions')}}</button>
+                            <button class="rounded bg-blue-400 m-3 p-1  text-white font-bold" type="submit">{{__('Remove permissions')}}</button>
                         </form> 
                         @endif
                     @endif
@@ -54,7 +54,7 @@
                 @if(auth()->user()->role == 'super-admin' && $user->role != 'super-admin')
                     <form class="" action="{{ route('admin.user.destroy',  $user) }}" method="POST">
                         @csrf @method('DELETE')
-                        <button class="rounded bg-red-400 m-3 p-1" type="submit">{{__('Delete user')}}</button>
+                        <button class="rounded bg-red-600 m-3 p-1 text-white font-bold" type="submit">{{__('Delete user')}}</button>
                     </form> 
                 @endif
                 
