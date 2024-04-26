@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call(UserSeeder ::class);
+        $this->call(CommentSeeder ::class);
         Order::factory(50)->create();
     }
 }

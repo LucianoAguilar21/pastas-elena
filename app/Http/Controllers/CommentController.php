@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
+use App\Models\Order;
 use Illuminate\Http\Request;
 
 class CommentController extends Controller
@@ -26,9 +27,24 @@ class CommentController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, Order $order)
     {
-        //
+        $request->validate([
+            'comment' => ['required','string','min:3'],
+        ]);
+        
+        $comment = new Comment();
+
+        $comment->comment = ($request->input('comment'));
+        
+        $comment->order_id = $order->id;
+        $comment->user_id = ($request->user()->id);
+        
+        $comment->save();
+
+        return to_route('orders.show',$comment->order )
+        ->with('status',__('Comment added Successfully!'));
+        
     }
 
     /**

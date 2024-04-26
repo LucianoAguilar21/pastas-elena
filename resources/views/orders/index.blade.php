@@ -57,12 +57,14 @@
             document.getElementById('addOrderSection').style.display = 'block';
     });
     </script>
-@endcan
-<div class="py-5 ">
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8"> 
-        <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-            <h1 class="text-center text-xl">Su usuario no tiene permisos</h1>
+    @else
+
+    <div class="py-5 ">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8"> 
+            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                <h1 class="text-center text-xl">Su usuario no tiene permisos</h1>
+            </div>
         </div>
     </div>
-</div>
+    @endcan
 </x-app-layout>

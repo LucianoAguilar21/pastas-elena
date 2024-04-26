@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -39,4 +40,5 @@ Route::middleware('auth','permissions')->group(function () {
     Route::get('/orders/{order}/show',[OrderController::class,'show'])->name('orders.show');
     Route::put('/orders/{order}',[OrderController::class,'update'])->name('orders.update');
     Route::put('/orders/{order}/changeStatus',[OrderController::class,'changeStatus'])->name('orders.changeStatus');
+    Route::post('/orders/{order}/comment', [CommentController::class, 'store'])->name('comment.store');
 });
