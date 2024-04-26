@@ -10,7 +10,7 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
 
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <a href="javascript:history.back()" class="mb-4 text-white bg-cyan-500 rounded p-1"><i class="fa-solid fa-backward text-white m-2"></i>{{__('Back')}}</a>
+                    <a href="javascript:history.back()" class="mb-4 text-white bg-cyan-800 rounded p-2">{{__('Back')}}</a>
 
                     <p class="text-gray-700 p-1"> <span class="font-bold">{{__('Email')}} </span>: {{$user->email}} </p>
                     <div class="flex">

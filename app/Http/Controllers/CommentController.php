@@ -43,7 +43,7 @@ class CommentController extends Controller
         $comment->save();
 
         return to_route('orders.show',$comment->order )
-        ->with('status',__('Comment added Successfully!'));
+        ->with('status',__('Comment added successfully'));
         
     }
 

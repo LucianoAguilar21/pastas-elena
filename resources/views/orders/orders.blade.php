@@ -6,28 +6,23 @@
     @foreach ($orders as $order)
 
     <div class="py-6 flex space-x-2">
-        <div class="flex-1">
-            <div class="flex justify-between items-center">
-             
-                    
-                
-                <div>
-
+        <div class="w-full">
+            <div class="">
                     @switch($order->status)
                         @case("new")
-                        <span class="text-white rounded-full bg-indigo-700 uppercase px-1 py-1 text-sm font-bold ">{{__($order->status)}}</span>
+                        <span class="text-white rounded-full bg-teal-600 uppercase px-1 py-1 text-sm font-bold ">{{__($order->status)}}</span>
                             @break
                     
                         @case("in_process")
-                        <span class="text-gray-100 rounded-full bg-blue-500 uppercase px-1 py-1 text-sm font-bold ">{{__($order->status)}}</span>
+                        <span class="text-gray-100 rounded-full bg-blue-700 uppercase px-1 py-1 text-sm font-bold ">{{__($order->status)}}</span>
                             @break
 
                         @case("finished")
-                            <span class="text-gray-100 rounded-full bg-teal-600 uppercase px-1 py-1 text-sm font-bold ">{{__($order->status)}}</span>
+                            <span class="text-gray-100 rounded-full bg-lime-950 uppercase px-1 py-1 text-sm font-bold ">{{__($order->status)}}</span>
                             @break
                         
                         @case("delivered")
-                            <span class="text-gray-100 rounded-full bg-blue-900 uppercase px-1 py-1 text-sm font-bold ">{{__($order->status)}}</span>
+                            <span class="text-gray-100 rounded-full bg-green-800 uppercase px-1 py-1 text-sm font-bold ">{{__($order->status)}}</span>
                             @break
 
                     @endswitch
@@ -36,54 +31,52 @@
 
                     
                     @if ($order->paid)
-                        <span class="rounded-full bg-green-500 text-gray-100 uppercase px-1 py-1 text-sm font-bold f">{{__('Paid')}}</span>
+                        <span class="rounded-full bg-green-600 text-gray-100 uppercase px-1 py-1 text-sm font-bold f">{{__('Paid')}}</span>
                         
                     @else
-                        <span class="rounded-full bg-red-500 text-gray-100 uppercase px-1 py-1 text-sm font-bold f">No {{__('Paid')}}</span>
+                        <span class="rounded-full bg-red-800 text-gray-100 uppercase px-1 py-1 text-sm font-bold f">No {{__('Paid')}}</span>
                     @endif
                     @if ($order->delivery)    
-                        <span class="text-center rounded-full bg-orange-400 text-gray-100 uppercase p-1 text-sm font-bold  f">{{__('With delivery')}}</span>
+                        <span class="text-center rounded-full bg-yellow-500 text-white uppercase p-1 text-sm font-bold  f">{{__('With delivery')}}</span>
 
                     @else
-                        <span class="rounded-full bg-gray-400 text-gray-200 uppercase px-1 py-1 text-sm font-bold f">{{__('Without delivery')}}</span>
+                        <span class="rounded-full bg-gray-400 text-white uppercase px-1 py-1 text-sm font-bold f">{{__('Without delivery')}}</span>
                     @endif
+
                     <br>
-                    <span class="text-lg  text-gray-600 dark:text-gray-200 font-bold">
-                        {{$order->customer}}
-                    </span>
-                    
-                    <hr >
-                    
                     @unless($order->created_at->eq($order->updated_at))
-                        <small class="text-sm text-gray-600 dark:text-gray-400"> &middot; {{ __('Edited') }}</small>
+                        <small class="text-sm text-gray-600 dark:text-gray-400 mt-2"> &middot; {{ __('Edited') }}</small>
                         <br>
                     @endunless
+                  
+                    <p class="text-xl py-3 text-gray-600 dark:text-gray-200 font-bold">
+                        {{$order->customer}}
+                    </p>
+                  
                     @if ($order->delivery)
-                        <small class="text-sm text-gray-600 dark:text-gray-400 font-bold">
-                            Direccion: {{ $order->address }}
+                        <small >
+                            <span class="text-base text-gray-600 dark:text-gray-400 font-bold">Direccion:</span><span class="text-gray-600 text-base"> {{ $order->address }} </span>
                         </small>
-                        <hr>
-                        <small class="text-sm text-gray-600 dark:text-gray-400 font-bold">
-                            Precio envío: ${{ $order->delivery_price }}
+                        <br>
+                        
+                        <small >
+                            <span class="text-base text-gray-600 dark:text-gray-400 font-bold">Precio envío:</span> $ <span class="text-gray-600 text-base">{{ $order->delivery_price }}</span>
                         </small>
-                        <hr>
-                        <small class="text-sm text-gray-600 dark:text-gray-400 font-bold">
-                            Entrega: {{ \Carbon\Carbon::parse($order->delivery_date)->isoFormat('dddd D [de] MMMM [a las] H:mm') }}
+                        <br>
+                        
+                        <small >
+                            <span class="text-base text-gray-600 dark:text-gray-400 font-bold">Entrega:</span> <span class="text-gray-600 text-base">{{ \Carbon\Carbon::parse($order->delivery_date)->isoFormat('dddd D [de] MMMM [a las] H:mm') }}</span>
                         </small>
                     @else
-                        <small class="text-sm text-gray-600 dark:text-gray-400 font-bold">
-                            Retira: {{ \Carbon\Carbon::parse($order->delivery_date)->isoFormat('dddd D [de] MMMM [a las] H:mm') }}
+                        <small >
+                            <span class="text-base text-gray-600 dark:text-gray-400 font-bold">Retira:</span>  <span class="text-gray-600 text-base"> {{ \Carbon\Carbon::parse($order->delivery_date)->isoFormat('dddd D [de] MMMM [a las] H:mm') }}</span>
                         </small>
                         
-                    @endif
-                    <hr>
-                    
-                    
-                </div>
+                    @endif              
                
             </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400 font-bold">Total: ${{$order->total}}</p>
-            <p class="mt-4 text-lg text-gray-900 dark:text-gray-100 font-bold">{{ $order->description }}</p>                        
+            <p class="text-base text-gray-600 dark:text-gray-400 font-bold">Total: <span class="text-gray-600 text-base">${{$order->total}}</p><span>
+            <p class="mt-4 text-lg text-gray-900 dark:text-gray-100 text-left">{{ $order->description }}</p>                        
 
         </div>
         
@@ -114,6 +107,7 @@
     
     
     @endforeach
+    
 
    
 </div>

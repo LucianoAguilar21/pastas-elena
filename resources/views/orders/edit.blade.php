@@ -11,10 +11,11 @@
     <div class="py-5 ">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <a href="javascript:history.back()" class="mb-4 text-white bg-cyan-500 rounded p-1"><i class="fa-solid fa-backward text-white m-2"></i>{{__('Back')}}</a>
 
-                    <h2 class="text-gray-700 text-base font-bold">{{__('Edit order')}}</h2>
+                <div class="p-6 text-gray-900 dark:text-gray-100">    
+                    <a href="javascript:history.back()" class="mb-4 text-white bg-cyan-800 rounded p-2">{{__('Back')}}</a>
+
+                    <h2 class="text-gray-700 text-base font-bold my-4">{{__('Edit order')}}</h2>
                     <h2 class="text-gray-500 text-base my-4">{{__('Order added by')}}: <span class="font-bold">{{$order->user->name}}</span></h2>
 
                     <form action="{{route('orders.update',$order)}}" method="POST">

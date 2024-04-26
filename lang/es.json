@@ -286,5 +286,11 @@
     "Permissions":"Permisos",
     "Role":"Rol",
     "Grant permissions":"Otorgar permisos",
-    "Remove permissions":"Remover permisos"
+    "Remove permissions":"Remover permisos",
+    "No comments yet":"Aún no hay comentarios",
+    "Comments":"Comentarios",
+    "Add comments":"Agregar comentarios",
+    "Add comment":"Agregar comentario",
+    "Comment added by":"Comentario agregado por",
+    "Comment added successfully":"Comentario agregado exitosamente"
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -54,8 +55,9 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
+        $comments = Comment::where('order_id',$order->id)->orderByDesc('created_at')->paginate(10);
         $this->authorize('view',$order);
-        return view('orders.show',['order'=>$order]);
+        return view('orders.show',['order'=>$order,'comments'=>$comments]);
     }
 
     /**
