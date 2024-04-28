@@ -11,3 +11,24 @@ body{
     left: 0; 
     
 }
+
+.whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;        
+    width: 60px;
+    height: 60px;          
+    z-index: 1000;
+    cursor: pointer;
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+.product{
+    width:15em;
+}
+
+.img-product{
+    width: 16em;
+}
