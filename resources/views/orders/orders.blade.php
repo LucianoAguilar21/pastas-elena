@@ -1,11 +1,11 @@
 @can('viewAny',App\Models\Order::class)
-<div class="mt-6 bg-white dark:bg-gray-800 shadow-sm rounded-lg divide-y dark:divide-gray-900">
+<div class="mt-6 bg-white dark:bg-white shadow-sm rounded-lg divide-y dark:divide-gray-900">
     <div>
         {{$orders->links()}}
     </div>
     @foreach ($orders as $order)
 
-    <div class="py-6 flex space-x-2">
+    <div class="py-6 flex space-x-2 dark:bg-white">
         <div class="w-full">
             <div class="">
                     @switch($order->status)
@@ -49,7 +49,7 @@
                         <br>
                     @endunless
                   
-                    <p class="text-xl py-3 text-gray-600 dark:text-gray-200 font-bold">
+                    <p class="text-xl py-3 text-gray-600 dark:text-gray-800 font-bold">
                         {{$order->customer}}
                     </p>
                   
@@ -76,7 +76,7 @@
                
             </div>
             <p class="text-base text-gray-600 dark:text-gray-400 font-bold">Total: <span class="text-gray-600 text-base">${{$order->total}}</p><span>
-            <p class="mt-4 text-lg text-gray-900 dark:text-gray-100 text-left">{{ $order->description }}</p>                        
+            <p class="mt-4 text-lg text-gray-900 dark:text-gray-800 text-left">{{ $order->description }}</p>                        
 
         </div>
         

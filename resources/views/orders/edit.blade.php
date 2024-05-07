@@ -10,7 +10,7 @@
     
     <div class="py-5 ">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="bg-white dark:bg-white overflow-hidden shadow-sm sm:rounded-lg">
 
                 <div class="p-6 text-gray-900 dark:text-gray-100">    
                     <a href="javascript:history.back()" class="mb-4 text-white bg-cyan-800 rounded p-2">{{__('Back')}}</a>
@@ -21,7 +21,7 @@
                     <form action="{{route('orders.update',$order)}}" method="POST">
                         @csrf @method('PUT')
 
-                        <label class="block text-gray-700 text-sm font-bold dark:text-white" for="username">
+                        <label class="block text-gray-700 text-sm font-bold dark:text-black" for="username">
                             {{__('Description')}}
                         </label>
                         <input required class="w-full shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="description" type="text" placeholder="{{__('Description')}}"
@@ -29,7 +29,7 @@
                          <x-input-error :messages="$errors->get('description')"/>
             
             
-                        <label class="block text-gray-700 text-sm font-bold mt-2 dark:text-white" for="username">
+                        <label class="block text-gray-700 text-sm font-bold mt-2 dark:text-black" for="username">
                             {{__('Customer')}}
                         </label>
                         <input required class=" w-full shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="customer" type="text" placeholder="{{__('Customer')}}"
@@ -38,29 +38,29 @@
             
                         {{-- PAGO ? --}}
             
-                        <label class="block text-gray-700 text-sm font-bold mt-2 dark:text-white" for="username">
+                        <label class="block text-gray-700 text-sm font-bold mt-2 dark:text-black" for="username">
                             {{__('¿Paid?')}}
                         </label>
                         @if (!$order->paid)
                             <div class="flex">
                                 <div class="">
                                     <input type="radio" name="paid" id="inlineRadio1" value="1">
-                                    <label class="text-gray-700 text-sm font-bold mb-2 dark:text-white" for="inlineRadio1">Si</label>
+                                    <label class="text-gray-700 text-sm font-bold mb-2 dark:text-black" for="inlineRadio1">Si</label>
                                 </div>
                                 <div class="mx-5">
                                     <input checked type="radio" name="paid" id="inlineRadio2" value="0">
-                                    <label class="text-gray-700 text-sm font-bold mb-2 dark:text-white" for="inlineRadio2" >No</label>
+                                    <label class="text-gray-700 text-sm font-bold mb-2 dark:text-black" for="inlineRadio2" >No</label>
                                 </div>
                             </div>
                         @else
                             <div class="flex">
                                 <div class="">
                                     <input checked type="radio" name="paid" id="inlineRadio1" value="1">
-                                    <label class="text-gray-700 text-sm font-bold mb-2 dark:text-white" for="inlineRadio1">Si</label>
+                                    <label class="text-gray-700 text-sm font-bold mb-2 dark:text-black" for="inlineRadio1">Si</label>
                                 </div>
                                 <div class="mx-5">
                                     <input type="radio" name="paid" id="inlineRadio2" value="0">
-                                    <label class="text-gray-700 text-sm font-bold mb-2 dark:text-white" for="inlineRadio2" >No</label>
+                                    <label class="text-gray-700 text-sm font-bold mb-2 dark:text-black" for="inlineRadio2" >No</label>
                                 </div>
                             </div>
                         @endif
@@ -71,7 +71,7 @@
             
                         {{--DELIVERY--}}
                         
-                        <label class="block text-gray-700 text-sm font-bold mt-2 dark:text-white" for="username">
+                        <label class="block text-gray-700 text-sm font-bold mt-2 dark:text-black" for="username">
                             {{__('¿With Delivery?')}}
                         </label>
             
@@ -79,11 +79,11 @@
                         <div class="flex">
                             <div class="">
                                 <input class="" checked type="radio" name="delivery" id="inlineRadio3" value="1" onclick="enableAddress()">
-                                <label class="text-gray-700 text-sm font-bold mb-2 dark:text-white" for="inlineRadio3">Si</label>
+                                <label class="text-gray-700 text-sm font-bold mb-2 dark:text-black" for="inlineRadio3">Si</label>
                             </div>
                             <div class="mx-5">
                                 <input class="" type="radio" name="delivery" id="inlineRadio4" value="1" onclick="disableAddress()">
-                                <label class="text-gray-700 text-sm font-bold mb-2 dark:text-white" for="inlineRadio4" >No</label>
+                                <label class="text-gray-700 text-sm font-bold mb-2 dark:text-black" for="inlineRadio4" >No</label>
                             </div>
                         </div>
                             
@@ -91,11 +91,11 @@
                         <div class="flex">
                             <div class="">
                                 <input class="" type="radio" name="delivery" id="inlineRadio3" value="1" onclick="enableAddress()">
-                                <label class="text-gray-700 text-sm font-bold mb-2 dark:text-white" for="inlineRadio3">Si</label>
+                                <label class="text-gray-700 text-sm font-bold mb-2 dark:text-black" for="inlineRadio3">Si</label>
                             </div>
                             <div class="mx-5">
                                 <input class="" checked type="radio" name="delivery" id="inlineRadio4" value="0" onclick="disableAddress()">
-                                <label class="text-gray-700 text-sm font-bold mb-2 dark:text-white" for="inlineRadio4" >No</label>
+                                <label class="text-gray-700 text-sm font-bold mb-2 dark:text-black" for="inlineRadio4" >No</label>
                             </div>
                         </div>
                         @endif
@@ -104,17 +104,17 @@
             
                         {{--DIRECCION--}}
             
-                        <label class="block text-gray-700 text-sm font-bold mt-2 dark:text-white" for="addressInput" id="addressLabel">
+                        <label class="block text-gray-700 text-sm font-bold mt-2 dark:text-black" for="addressInput" id="addressLabel">
                             {{__('Address')}}
                         </label>
                         <input class="w-full shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                                 name="address" id="addressInput" type="text" placeholder="{{__('Address')}}:" value="{{old('address',$order->address)}}">
                         <x-input-error :messages="$errors->get('address')"/>
             
-                        <label class="block text-gray-700 text-sm font-bold mt-2 dark:text-white" for="deliveryPrice" id="deliveryPriceLabel">
+                        <label class="block text-gray-700 text-sm font-bold mt-2 dark:text-black" for="deliveryPrice" id="deliveryPriceLabel">
                             {{__('Delivery price')}}
                         </label>
-                        <input class="w-full shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline dark:text-white"
+                        <input class="w-full shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline dark:text-black"
                                 name="delivery_price" id="deliveryPrice" min="1" type="number" placeholder="{{__('Delivery price')}}:"
                                 value="{{old('delivery_price',$order->delivery_price)}}">
                         <x-input-error :messages="$errors->get('delivery_price')"/>
@@ -122,7 +122,7 @@
             
                         {{--FECHA DE ENTREGA--}}
             
-                        <label class="block text-gray-700 text-sm font-bold mt-2 dark:text-white" for="delivery_date">
+                        <label class="block text-gray-700 text-sm font-bold mt-2 dark:text-black" for="delivery_date">
                             {{__('Delivery date')}}
                         </label>
                         <input required class="w-full shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -131,7 +131,7 @@
                         <x-input-error :messages="$errors->get('delivery_date')"/>
             
             
-                        <label class="block text-gray-700 text-sm font-bold mt-2 dark:text-white" for="total">
+                        <label class="block text-gray-700 text-sm font-bold mt-2 dark:text-black" for="total">
                             {{__('Total')}} $
                         </label>
                         <input class="w-full shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"

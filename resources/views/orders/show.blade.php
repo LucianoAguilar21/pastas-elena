@@ -7,7 +7,7 @@
     </x-slot>
     <div class="py-5">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="bg-white dark:bg-white overflow-hidden shadow-sm sm:rounded-lg">
     
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <a href="{{ route('orders.index') }}" class="mb-4 text-white bg-cyan-800 rounded p-2">{{__('Back')}}</a>
@@ -60,7 +60,7 @@
                             <br>
                         @endunless
                         
-                        <p class="text-xl py-3 text-gray-600 dark:text-gray-200 font-bold">
+                        <p class="text-xl py-3 text-gray-600 dark:text-gray-800 font-bold">
                             {{$order->customer}}
                         </p>
                         
@@ -91,7 +91,7 @@
 
                         <p class="text-base text-gray-600 dark:text-gray-400 font-bold">Total: <span class="text-gray-600 text-base">${{$order->total}}</p><span>
                         
-                        <p class="mt-4 text-lg text-gray-900 dark:text-gray-100 text-left">{{ $order->description }}</p>                          
+                        <p class="mt-4 text-lg text-gray-900 dark:text-gray-800 text-left">{{ $order->description }}</p>                          
                         
                         <form action="{{route('orders.changeStatus',$order)}}" method="POST" class="my-7">
                             @csrf @method('PUT')
@@ -106,7 +106,7 @@
                                     <option value="finished">Finalizado</option>
                                     <option value="delivered">Entregado</option>
                                 </select>
-                                <button class="mx-2 p-2 rounded bg-gray-200">{{__('Change')}}</button>
+                                <button class="mx-2 p-2 rounded bg-gray-800">{{__('Change')}}</button>
                             </div>
                         </form>
 
@@ -120,7 +120,7 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg border-t px-6 mt-2">
+            <div class="bg-white dark:bg-white overflow-hidden shadow-sm sm:rounded-lg border-t px-6 mt-2">
                 <h2 class="text-xl pt-3 mb-3 border-b border-b-gray-200">{{__('Add comments')}}</h2>
                 <form action="{{route("comment.store",$order)}}" method="POST" class="mb-3">
                     @csrf
