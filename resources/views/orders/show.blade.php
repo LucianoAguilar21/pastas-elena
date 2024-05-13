@@ -106,7 +106,7 @@
                                     <option value="finished">Finalizado</option>
                                     <option value="delivered">Entregado</option>
                                 </select>
-                                <button class="mx-2 p-2 rounded bg-gray-800">{{__('Change')}}</button>
+                                <button class="mx-2 p-2 rounded bg-gray-800 text-white dark:bg-gray-200">{{__('Change')}}</button>
                             </div>
                         </form>
 

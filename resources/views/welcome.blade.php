@@ -67,7 +67,7 @@
                     <h1 class="text-5xl font-semibold text-white lg:text-center sm:text-justify">
                        Pastas Elena
                     </h1>
-                    <p class="text-5xl font-semibold text-white lg:text-center sm:text-justify">Rotisería <br> Fábrica de Pastas</p>R
+                    <p class="text-5xl font-semibold text-white lg:text-center sm:text-justify">Rotisería <br> Fábrica de Pastas</p>
                 </div>
                 <div class="text-center mt-20">
                     <a href="#menu" class="text-white font-bold text-xl p-2 bg-rose-500 rounded">MENU</a>
