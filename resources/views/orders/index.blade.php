@@ -12,9 +12,9 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100 dark:bg-white">
                     
-                    <button class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded" id="loadOrdersBtn">{{__('Orders')}}</button>
+                    <button class="bg-gray-800 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded" id="loadOrdersBtn">{{__('Orders')}}</button>
                     {{-- <a href="{{ route('users') }}" class="button {{ request()->is('users') ? 'active' : '' }}">Usuarios</a> --}}
-                    <button class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded" id="loadAddOrderBtn">{{__('Add order')}}</button>
+                    <button class="bg-gray-800 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded" id="loadAddOrderBtn">{{__('Add order')}}</button>
                     
                     @if ($errors->any())
                     

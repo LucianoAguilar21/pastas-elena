@@ -1,7 +1,7 @@
 @can('viewAny',App\Models\Order::class)
 <div class="mt-6 bg-white dark:bg-white shadow-sm rounded-lg divide-y dark:divide-gray-900">
-    <div>
-        {{$orders->links()}}
+    <div >
+        {{$orders->links("vendor.pagination.tailwind")}}
     </div>
     @foreach ($orders as $order)
 

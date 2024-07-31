@@ -9,7 +9,7 @@ body{
     right: 0; 
     bottom: 0; 
     left: 0; 
-    
+    background-color: black;
 }
 
 .whatsapp-btn {
@@ -22,9 +22,7 @@ body{
     cursor: pointer;
 }
 
-html {
-    scroll-behavior: smooth;
-  }
+
 .product{
     width:15em;
 }

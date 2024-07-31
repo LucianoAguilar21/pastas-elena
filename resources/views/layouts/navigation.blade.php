@@ -10,7 +10,7 @@
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('orders.index') }}">
                         {{-- <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" /> --}}
-                        <img class="rounded-full w-16 " src="https://scontent.fsty1-1.fna.fbcdn.net/v/t1.6435-9/209762159_341557424073447_222755981763541434_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_ohc=eY4q_Hht1pMAb6W3XEW&_nc_ht=scontent.fsty1-1.fna&oh=00_AfCrqaM7PmEf6HCrHDaSV2ETNZcVb8BMEt95kPi5h8SQLw&oe=6648FCE9" alt="logo">
+                        <img class="rounded-full w-14 " src="https://scontent.fsty1-1.fna.fbcdn.net/v/t1.6435-9/209762159_341557424073447_222755981763541434_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=1d70fc&_nc_eui2=AeFnhIeQhgLCqEV2QivKLsNMV--S197VDEJX75LX3tUMQok6eRZvXRRZ9wYcMPT6-CteGJRmoLKDzihYZij2v0Qb&_nc_ohc=pcDiRWA0MSAQ7kNvgEWHjha&_nc_ht=scontent.fsty1-1.fna&gid=AI4hLYfOJAP_WEzZTOyPWt5&oh=00_AYBX9ATBkB8j8n1_3CV7gHRnhVBu0nbxCQlZaCxxeShKZQ&oe=66D218E9" alt="logo">
                     </a>
                 </div>
 
