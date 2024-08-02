@@ -9,12 +9,12 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
 
-                <div class="p-6 text-gray-900 dark:text-gray-100">
+                <div class="p-6 text-gray-900 dark:text-white">
                     <a href="javascript:history.back()" class="mb-4 text-white bg-cyan-800 rounded p-2">{{__('Back')}}</a>
 
-                    <p class="text-gray-700 p-1"> <span class="font-bold">{{__('Email')}} </span>: {{$user->email}} </p>
+                    <p class="text-gray-700 dark:text-white p-1"> <span class="font-bold">{{__('Email')}} </span>: {{$user->email}} </p>
                     <div class="flex">
-                        <p class="text-gray-700 p-1"> <span class="font-bold">{{__('Role')}} </span> : {{$user->role}} </p>
+                        <p class="text-gray-700 dark:text-white p-1"> <span class="font-bold">{{__('Role')}} </span> : {{$user->role}} </p>
 
                         @if( auth()->user()->role =='super-admin' && $user->role !== 'super-admin' && !auth()->user()->is($user))
                                                  
@@ -29,7 +29,7 @@
                         @endif
 
                     </div>
-                    <p class="text-gray-700 p-1"> <span class="font-bold">{{__('Permissions')}} </span>{{$user->permissions ? 'Si' : 'No'}} </p>
+                    <p class="text-gray-700 dark:text-white p-1"> <span class="font-bold">{{__('Permissions')}} </span>{{$user->permissions ? 'Si' : 'No'}} </p>
                 </div>
 
                 {{-- @can('update',$user) --}}

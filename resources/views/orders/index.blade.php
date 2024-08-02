@@ -10,11 +10,11 @@
     <div class="py-5 ">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 ">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100 dark:bg-white">
+                <div class="p-6 text-gray-900 dark:text-gray-100 dark:bg-gray-800">
                     
-                    <button class="bg-gray-800 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded" id="loadOrdersBtn">{{__('Orders')}}</button>
+                    <button class="bg-blue-900 dark:bg-blue-400 hover:bg-teal-700 dark:hover:bg-blue-800 transition ease-in-out duration-300 text-white font-bold py-2 px-4 rounded" id="loadOrdersBtn">{{__('Orders')}}</button>
                     {{-- <a href="{{ route('users') }}" class="button {{ request()->is('users') ? 'active' : '' }}">Usuarios</a> --}}
-                    <button class="bg-gray-800 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded" id="loadAddOrderBtn">{{__('Add order')}}</button>
+                    <button class="bg-blue-900 dark:bg-blue-400 hover:bg-teal-700 dark:hover:bg-blue-800 transition ease-in-out duration-300 text-white font-bold py-2 px-4 rounded" id="loadAddOrderBtn">{{__('Add order')}}</button>
                     
                     @if ($errors->any())
                     
@@ -58,7 +58,7 @@
     <div class="py-5 ">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8"> 
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <h1 class="text-center text-xl">Su usuario no tiene permisos</h1>
+                <h1 class="text-center text-xl dark:text-white">Su usuario no tiene permisos</h1>
             </div>
         </div>
     </div>
